@@ -5,7 +5,7 @@ import getFormattedDate from '@/lib/getFormattedDate';
 import Link from 'next/link';
 
 export function generateStaticParams() {
-    const posts = getSortedPostsData(); //deduped
+    const posts = getSortedPostsData();
 
     return posts.map((post)=> ({
         postId: post.id
@@ -14,7 +14,7 @@ export function generateStaticParams() {
 
 export function generateMetadata({ params }: { params : { postId:string } } ) {
 
-    const posts = getSortedPostsData(); //deduped
+    const posts = getSortedPostsData();
     const {postId} = params;
 
     const post: BlogPost | undefined = posts.find(post=>post.id === postId);
@@ -50,10 +50,10 @@ export default async function Post({ params }: { params : { postId:string } } ) 
             <br />
             <p className='mt-0 text-s'>{formattedDate}</p>
             </div>
-            <article>
+            <article className='ml-4'>
                 <section dangerouslySetInnerHTML={{__html: contentHtml}} />
                 <p>
-                    <Link href="/">Back to home</Link>
+                    <Link href="/posts">Back to posts</Link>
                 </p>
             </article>
         </main>

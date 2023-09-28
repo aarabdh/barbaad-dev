@@ -20,7 +20,8 @@ export default function Home() {
 						<Link href="/contact" className="underline">Hit me up!</Link>
 					</p>
 					<div className="ml-6 mb-5">
-						<Posts />
+						<Link href="/posts" className="underline text-3xl dark:text-white/90">
+							Blog Posts</Link>
 					</div>
 				</main>
 			</div>
