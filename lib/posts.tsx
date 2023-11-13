@@ -1,9 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-// import { remark } from 'remark'
 import showdown from 'showdown'
-// import html from 'remark-html'
 
 const postsDirectory = path.join(process.cwd(), 'BlogPosts')
 const converter = new showdown.Converter()
@@ -26,6 +24,7 @@ export function getSortedPostsData() {
             id,
             title: matterResult.data.title,
             date: matterResult.data.date,
+            poem: matterResult.data.poem
         };
 
         return blogPost;
@@ -48,6 +47,7 @@ export async function getPostData(id: string) {
         id,
         title: matterResult.data.title,
         date: matterResult.data.date,
+        poem: matterResult.data.poem,
         contentHtml
     }
 
