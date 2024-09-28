@@ -4,8 +4,8 @@ const repoName = 'barbaad-dev'; // Replace with your actual GitHub repository na
 
 const nextConfig = {
   output: 'export',
-  assetPrefix: '',
-  basePath: '/out'
+  assetPrefix: `${isProd ? repoName : ''}`,
+  basePath: `${isProd ? repoName : '/out'}`
 };
 
 module.exports = nextConfig;
