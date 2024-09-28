@@ -43,37 +43,19 @@ export default async function Post({ params }: { params : { postId:string } } ) 
 
     const formattedDate = getFormattedDate(date);
 
-    if (poem === true) {
-        return (
-            <div className='px-6 prose prose-xl psore-slate dark:prose-invert mx-auto'>
-            <div className='border border-gray-300 rounded-lg p-4 mt-3'>
-            <h1 className='text-3xl mt-4 mb-0'>{title}</h1>
-            <br />
-            <p className='mt-0 text-s'>{formattedDate}</p>
-            </div>
-            <article className='ml-4 text-center'>
-                <section dangerouslySetInnerHTML={{__html: contentHtml}} />
-                <p>
-                    <Link href="/posts">Back to posts</Link>
-                </p>
-            </article>
-        </div>
-        )
-    }
-
     return (
         <div className='px-6 prose prose-xl psore-slate dark:prose-invert mx-auto'>
             <div className='border border-gray-300 rounded-lg p-4 mt-3'>
-            <h1 className='text-3xl mt-4 mb-0'>{title}</h1>
-            <br />
-            <p className='mt-0 text-s'>{formattedDate}</p>
+                <h1 className='text-3xl mt-4 mb-0'>{title}</h1>
+                <br />
+                <p className='mt-0 text-s'>{formattedDate}</p>
             </div>
-            <article className='ml-4'>
-                <section dangerouslySetInnerHTML={{__html: contentHtml}} />
+            <article className={`ml-4`}>
+                <section className={`${poem ? 'text-center' : ''}`} dangerouslySetInnerHTML={{ __html: contentHtml }} />
                 <p>
                     <Link href="/posts">Back to posts</Link>
                 </p>
             </article>
         </div>
-  )
+    );
 }
