@@ -20,6 +20,10 @@ export default function Home() {
 						<Link href="/contact" className="underline">Hit me up!</Link>
 					</p>
 					<div className="ml-6 mb-5">
+						<Link href="https://clicks.barbaad.dev/" className="underline text-3xl dark:text-white/90">
+							Clicks</Link>
+					</div>
+					<div className="ml-6 mb-5">
 						<Link href="/game-of-life" className="underline text-3xl dark:text-white/90">
 							Conway&apos;s Game of Life</Link>
 					</div>
