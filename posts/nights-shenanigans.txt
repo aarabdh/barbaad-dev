@@ -1,6 +1,6 @@
 1:HL["/_next/static/media/a34f9d1faa5f3315-s.p.woff2",{"as":"font","type":"font/woff2"}]
 2:HL["/_next/static/css/b1651838ae593cc2.css",{"as":"style"}]
-0:["_Y71PaREvZP2UajD8VLAE",[[["",{"children":["posts",{"children":[["postId","nights-shenanigans","d"],{"children":["__PAGE__?{\"postId\":\"nights-shenanigans\"}",{}]}]}]},"$undefined","$undefined",true],"$L3",[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/b1651838ae593cc2.css","precedence":"next"}]],"$L4"]]]]
+0:["eJMRKwzGRiCQj98f8PskG",[[["",{"children":["posts",{"children":[["postId","nights-shenanigans","d"],{"children":["__PAGE__?{\"postId\":\"nights-shenanigans\"}",{}]}]}]},"$undefined","$undefined",true],"$L3",[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/b1651838ae593cc2.css","precedence":"next"}]],"$L4"]]]]
 5:I{"id":6685,"chunks":["685:static/chunks/685-7238a26a902c1fee.js","654:static/chunks/app/posts/[postId]/page-4c92d98382e09af1.js"],"name":"","async":false}
 7:I{"id":7767,"chunks":["272:static/chunks/webpack-c6e694ae4e2ade24.js","971:static/chunks/fd9d1056-a737852f23c04278.js","596:static/chunks/596-13acd0bd766ac815.js"],"name":"default","async":false}
 8:I{"id":7920,"chunks":["272:static/chunks/webpack-c6e694ae4e2ade24.js","971:static/chunks/fd9d1056-a737852f23c04278.js","596:static/chunks/596-13acd0bd766ac815.js"],"name":"default","async":false}
