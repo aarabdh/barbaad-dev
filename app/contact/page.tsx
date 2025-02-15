@@ -5,21 +5,35 @@ import { useState } from 'react'
 export default function SendEmail() {
     const [message, setMessage] = useState('');
     const [name, setName] = useState('');
+    const [contact, setContact] = useState('');
 
     const handleSendEmail = async () => {
         if (name === '' || message === '') {
             alert("Please enter your name and a message before you submit.")
             return;
         }
+
+        let messageBody = null;
+        if (contact.length > 0) {
+            messageBody = JSON.stringify({name, message, contact})
+        } else {
+            messageBody = JSON.stringify({name, message})
+        }
+
         try {
-            const response = await fetch('/api/sendEmail', {
+            const response = await fetch('https://hp7itvkpp56jrmq7p7b57nmhji0sljqf.lambda-url.eu-north-1.on.aws/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ name, message }),
+                body: messageBody,
             });
-            alert("Message sent!")
+
+            if (response.status === 200 || response.status === 201) {
+                alert("Message sent!");
+            } else {
+                alert("Could not send the message :(")
+            }
         } catch (error) {
             alert('Error in sending message.\n Sorry :(');
         }
@@ -41,6 +55,19 @@ export default function SendEmail() {
                     />
                 </div>
                 
+            </div>
+            <div className="mb-6">
+                <label htmlFor="contact" className="block mb-2 text-xl text-gray-900 dark:text-white">Contact</label>
+                <div className="lg:w-3/4 w-full">
+                    <input
+                        type="text"
+                        id="contact"
+                        className="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-md focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        placeholder="(Optional) Add contact if you want me to respond."
+                        value={contact}
+                        onChange={(e) => setContact(e.target.value)}
+                    />
+                </div>
             </div>
             <div className="mb-6">
                 <label htmlFor="message" className="block mb-2 text-xl text-gray-900 dark:text-white">Message</label>
