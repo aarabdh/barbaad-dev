@@ -33,12 +33,23 @@ export default function SendEmail() {
                 body: messageBody,
             });
 
+            response = await fetch('http://129.159.21.84:3001/api/send_message', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ name, message }),
+            });
+            
+            alert("Message sent!")
+        
             if (response.status === 200 || response.status === 201) {
                 setSuccessMessage("Message sent!");
                 setTimeout(() => setSuccessMessage(''), 5000); // Hide message after 5s
             } else {
                 alert("Could not send the message :(");
             }
+
         } catch (error) {
             alert('Error in sending message.\nSorry :(');
         } finally {
