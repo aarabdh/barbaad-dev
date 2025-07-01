@@ -1,6 +1,6 @@
 import React from 'react'
 import { getSortedPostsData } from '@/lib/posts'
-import ListItem from './ListItem';
+import BlogItem from './BlogItem';
 
 export default function Posts() {
     const posts = getSortedPostsData();
@@ -9,7 +9,7 @@ export default function Posts() {
         <h2 className='text-4xl font-bold dark:text-white/90'>Blog Posts</h2>
         <ul className='w-full'>
             {posts.map(post => (
-                <ListItem key={post.id} post={post} />
+                <BlogItem key={post.id} post={post} />
             ))}
         </ul>
     </section>

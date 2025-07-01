@@ -8,6 +8,10 @@
 # testing
 /coverage
 
+/tempCreat
+
+Snippets.txt
+
 # next.js
 /.next/
 /out/

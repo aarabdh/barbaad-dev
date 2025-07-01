@@ -1,10 +1,13 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import { remark } from 'remark'
-import html from 'remark-html'
+import showdown from 'showdown'
 
 const postsDirectory = path.join(process.cwd(), 'BlogPosts')
+const converter = new showdown.Converter()
+converter.setOption('simpleLineBreaks', 'true');
+converter.setOption('metadata', 'true');
+
 
 export function getSortedPostsData() {
     const fileNames = fs.readdirSync(postsDirectory);
@@ -14,13 +17,14 @@ export function getSortedPostsData() {
         const fullPath = path.join(postsDirectory, fileName);
 
         const fileContents = fs.readFileSync(fullPath, 'utf-8');
-
+        
         const matterResult = matter(fileContents);
 
         const blogPost: BlogPost = {
             id,
             title: matterResult.data.title,
             date: matterResult.data.date,
+            poem: matterResult.data.poem
         };
 
         return blogPost;
@@ -35,17 +39,15 @@ export async function getPostData(id: string) {
     const fileContents = fs.readFileSync(fullPath, 'utf-8');
 
     const matterResult = matter(fileContents);
-
-    const processedContent = await remark()
-        .use(html)
-        .process(matterResult.content);
-    
-    const contentHtml = processedContent.toString();
+    const meta = converter.getMetadata()
+    const result = converter.makeHtml(fileContents)
+    const contentHtml = result;
 
     const blogPostWithHTML: BlogPost & {contentHtml: string} = {
         id,
         title: matterResult.data.title,
         date: matterResult.data.date,
+        poem: matterResult.data.poem,
         contentHtml
     }
 

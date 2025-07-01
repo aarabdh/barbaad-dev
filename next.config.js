@@ -1,4 +1,9 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const isProd = process.env.NODE_ENV === 'production';
+const repoName = 'barbaad-dev'; // Replace with your actual GitHub repository name
 
-module.exports = nextConfig
+const nextConfig = {
+  output: 'export',
+};
+
+module.exports = nextConfig;
