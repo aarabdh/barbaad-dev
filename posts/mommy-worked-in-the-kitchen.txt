@@ -1,6 +1,6 @@
 1:HL["/_next/static/media/e4af272ccee01ff0-s.p.woff2",{"as":"font","type":"font/woff2"}]
 2:HL["/_next/static/css/da86a7380895bbce.css",{"as":"style"}]
-0:["ABlIaRrKdBWwRNNP90j7p",[[["",{"children":["posts",{"children":[["postId","mommy-worked-in-the-kitchen","d"],{"children":["__PAGE__?{\"postId\":\"mommy-worked-in-the-kitchen\"}",{}]}]}]},"$undefined","$undefined",true],"$L3",[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/da86a7380895bbce.css","precedence":"next"}]],"$L4"]]]]
+0:["uI8vUbDJXlD-1iNLUkfeh",[[["",{"children":["posts",{"children":[["postId","mommy-worked-in-the-kitchen","d"],{"children":["__PAGE__?{\"postId\":\"mommy-worked-in-the-kitchen\"}",{}]}]}]},"$undefined","$undefined",true],"$L3",[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/da86a7380895bbce.css","precedence":"next"}]],"$L4"]]]]
 5:I{"id":6685,"chunks":["685:static/chunks/685-7238a26a902c1fee.js","654:static/chunks/app/posts/[postId]/page-4c92d98382e09af1.js"],"name":"","async":false}
 7:I{"id":7767,"chunks":["272:static/chunks/webpack-684bc21e5944b16a.js","971:static/chunks/fd9d1056-a737852f23c04278.js","596:static/chunks/596-13acd0bd766ac815.js"],"name":"default","async":false}
 8:I{"id":7920,"chunks":["272:static/chunks/webpack-684bc21e5944b16a.js","971:static/chunks/fd9d1056-a737852f23c04278.js","596:static/chunks/596-13acd0bd766ac815.js"],"name":"default","async":false}
